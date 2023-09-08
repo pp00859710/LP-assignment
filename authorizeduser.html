@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title id="page-title">Log in</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+
+</head>
+  <body>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="authorizeduser.html">Log in </a></li>
+      </ul>
+    </nav>
+    <div class="item">
+      <img
+        src="https://via.placeholder.com/150"
+        alt="Item 1 Image"
+        height="150"
+        width="150"
+      />
+      <div class="fixed-description">
+        <p>Item 1</p>
+        <p>Price: $10.00</p>
+      </div>
+      <button class="add-to-cart-btn" onclick="addToCart(1, 10)">
+        Add to Cart
+      </button>
+    </div>
+    <div class="item">
+      <img
+        src="https://via.placeholder.com/150"
+        alt="Item 2 Image"
+        height="150"
+        width="150"
+      />
+      <div class="fixed-description">
+        <p>Item 2</p>
+        <p>Price: $15.00</p>
+      </div>
+      <button class="add-to-cart-btn" onclick="addToCart(2, 15)">
+        Add to Cart
+      </button>
+    </div>
+    </div>
+    <div class="cart-details" style="color: black">
+      <span id="cart-count">Cart Items: 0</span><br />
+      <span id="total-price">Total Price: $0.00</span>
+    </div>
+    <script>
+      var cartCount = 0;
+      var totalPrice = 0;
+      const pageTitleElement = document.getElementById("page-title").innerText;
+      const totalCartValueElement = document.getElementById("total-cart-value");
+      function addToCart(itemId, itemPrice) {
+        cartCount += 1;
+        totalPrice += itemPrice;
+        updateCartCount();
+        updateTotalPrice();
+        console.log(totalPrice);
+        window.lpTag = window.lpTag || {}
+        lpTag.sdes = lpTag.sdes || [];
+        lpTag.sdes.push({
+          type: "cart", //MANDATORY
+          total: totalPrice,
+          currency: "USD", //CURRENCY CODE
+          numItems: cartCount, //NUMBER OF ITEMS IN CART
+        });
+
+      }
+      function updateCartCount() {
+        const cartCountElement = document.getElementById("cart-count");
+        cartCountElement.textContent = "Cart Items: " + cartCount.toString();
+      }
+      function updateTotalPrice() {
+        const totalPriceElement = document.getElementById("total-price");
+        totalPriceElement.textContent =
+          "Total Price: " + "$" + totalPrice.toFixed(2);
+      }
+      lpTag.identities = [];
+      lpTag.identities.push(identityfn);
+      function identityfn(callback) {
+        // var jwtObj1 = [
+
+        //   {
+
+        //     header: {
+
+        //       alg: "RS256",
+
+        //       typ: "JWT",
+
+        //     },
+
+        //   },
+
+        //   {
+
+        //     payload: {
+
+        //       sub: "1234567890",
+
+        //       iss: "https://lpexercise.000webhostapp.com/auth.html",
+
+        //       acr: "loa1",
+
+        //     },
+
+        //   },
+
+        // ];
+
+        /*
+
+          callback({
+
+          "iss": "https://lpbrandweb.000webhostapp.com/special.html",
+
+          "acr":"loa1",
+
+          "sub": "1234567890"
+
+        });
+
+ 
+
+        */
+
+ 
+
+        // var obj2 = {
+
+        //   sub: "+972-3-5555-555",
+
+        //   iss: "https://jwt.io",
+
+        //   aud: "acc:qa57221676",
+
+        //   exp: 2034971930,
+
+        //   iat: 1471899942,
+
+        //   given_name: "Eitan",
+
+        //   acr: "loa1",
+
+        // };
+        callback({
+          sub: "+972-3-5555-555",
+          iss: "https://jwt.io",
+          aud: "acc:qa57221676",
+          exp: 2034971930,
+          iat: 1471899942,
+          given_name: "Eitan",
+          acr: "loa1",
+        });
+
+      }
+
+ 
+
+      // var public_key = MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAu1SU1LfVLPHCozMxH2Mo4lgOEePzNm0tRgeLezV6ffAt0gunVTLw7onLRnrq0/IzW7yWR7QkrmBL7jTKEn5u+qKhbwKfBstIs+bMY2Zkp18gnTxKLxoS2tFczGkPLPgizskuemMghRniWaoLcyehkd3qqGElvW/VDL5AaWTg0nLVkjRo9z+40RQzuVaE8AkAFmxZzow3x+VJYKdjykkJ0iT9wCS0DRTXu269V264Vf/3jvredZiKRkgwlL9xNAwxXFg0x/XFw005UWVRIkdgcKWTjpBP2dPwVZ4WWC+9aGVd+Gyn1o0CLelf4rEjGoXbAAEgAqeGUxrcIlbjXfbcmwIDAQAB
+
+      var id_token = "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIrOTcyLTMtNTU1NS01NTUiLCJpc3MiOiJodHRwczovL2p3dC5pbyIsImF1ZCI6ImFjYzpxYTU3MjIxNjc2IiwiZXhwIjoyMDM0OTcxOTMwLCJpYXQiOjE0NzE4OTk5NDIsImdpdmVuX25hbWUiOiJFaXRhbiIsImFjciI6ImxvYTEifQ.n9hYTeaeS03lccbdNnXMOpgZisHfJm9qrjZZhwX0vkC-eOafPnn4rqqqXL9aYJv_rvdSVKK_TFufITX_W9aDpyls9BFlvZTKjTjADohP1KGl-f8tDDrLQrrLrfN4ESPudOhR0_BS58AxiuaXePzAdPLsUmQx40IMNwkUjjEEM2dML7nQM5v0DRypaDuNpS3-6W_OBLghEnzr2wwmWjpOC1S3tT_U70lPLoCp9i5dYbs8VO9HRvzQ0I1Mbh58qVGGVNcolljXc0xicwlxN_65xad3iOP6DeQJyNH5-NYSnIISjTNjZoG2Dfzzwr5QXr_3h9ABgmYGfss4lRA4_5aBGw";
+       function lpGetAuthenticationToken(callback) {
+        console.log("LP asked for id_token or auth code in Code Flow");
+        callback(id_token);
+        callback("", "error reason");
+      }
+    </script>
+
+  </body>
+
+</html>
+
+ 

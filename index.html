@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title id="page-title">LP Brand Store</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+<body>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="authorizeduser.html">Log in</a></li>
+      </ul>
+    </nav>
+
+    <div class="item">
+      <img src="https://via.placeholder.com/150" alt="Item 1 Image" height="150" width="150"/>
+
+      <div class="fixed-description">
+        <p>Item 1</p>
+        <p>Price: $10.00</p>
+      </div>
+      <button class="add-to-cart-btn" onclick="addToCart(1, 10)">
+        Add to Cart
+      </button>
+    </div>
+    <div class="item">
+      <img src="https://via.placeholder.com/150" alt="Item 2 Image" height="150" width="150"/>
+      <div class="fixed-description">
+        <p>Item 2</p>
+        <p>Price: $15.00</p>
+      </div>
+      <button class="add-to-cart-btn" onclick="addToCart(2, 15)">
+        Add to Cart
+      </button>
+    </div>
+
+    </div>
+
+    </div>
+    <div class="cart-details" style="color: black">
+      <span id="cart-count">Cart Items: 0</span><br />
+      <span id="total-price">Total Price: $0.00</span>
+    </div>
+
+<script>
+
+var cartCount = 0;
+var totalPrice = 0;
+const pageTitleElement = document.getElementById("page-title").innerText;
+const totalCartValueElement = document.getElementById("total-cart-value");
+function addToCart(itemId, itemPrice) {
+    cartCount += 1;
+    totalPrice += itemPrice;
+    updateCartCount();
+    updateTotalPrice();
+    console.log(totalPrice);
+// var totalPriceString = `Total Price: ${totalPrice}`;
+
+// var pageTitleString = `Page Title: ${pageTitleElement}`;
+window.lpTag = window.lpTag || {};
+lpTag.sdes = lpTag.sdes || [];
+lpTag.sdes.push({
+type: "cart", //MANDATORY
+total: totalPrice,
+currency: "USD", //CURRENCY CODE
+numItems: cartCount, //NUMBER OF ITEMS IN CART
+
+          // products: [
+
+          // {
+
+          // product: {
+
+          // name: pageTitleElement, //PRODUCT NAME
+
+          //       category: "category", //PRODUCT CATEGORY NAME
+
+          //       sku: "sku", //PRODUCT SKU OR UNIQUE IDENTIFIER
+
+          //       price: 7.8, //SINGLE PRODUCT PRICE
+
+          // },
+
+          //     quantity: 1, //NUMBER OF PRODUCTS
+
+          // },
+
+          // ],
+
+        });
+
+ 
+
+        // lpTag.section = [pageTitleElement];
+
+        //SET A LIST OF YOUR SITE SECTIONS
+
+        // "electronics",  //CAN BE A SECTION OR A SUB-SECTION
+
+        // "user agreement faqs"
+
+      }
+
+ 
+
+      function updateCartCount() {
+
+        const cartCountElement = document.getElementById("cart-count");
+
+        cartCountElement.textContent = "Cart Items: " + cartCount.toString();
+
+      }
+
+ 
+
+      function updateTotalPrice() {
+
+        const totalPriceElement = document.getElementById("total-price");
+
+        totalPriceElement.textContent =
+
+          "Total Price: " + "$" + totalPrice.toFixed(2);
+
+      }
+
+    </script>
+
+  </body>
+
+</html>
