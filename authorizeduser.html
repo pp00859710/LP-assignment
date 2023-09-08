@@ -85,94 +85,30 @@
       }
       lpTag.identities = [];
       lpTag.identities.push(identityfn);
-      function identityfn(callback) {
-        // var jwtObj1 = [
-
-        //   {
-
-        //     header: {
-
-        //       alg: "RS256",
-
-        //       typ: "JWT",
-
-        //     },
-
-        //   },
-
-        //   {
-
-        //     payload: {
-
-        //       sub: "1234567890",
-
-        //       iss: "https://lpexercise.000webhostapp.com/auth.html",
-
-        //       acr: "loa1",
-
-        //     },
-
-        //   },
-
-        // ];
-
-        /*
-
+      
+      function identityfn(callback) { 
           callback({
+            "sub": "Prashant Pareek - 859710",
+            "iss": "https://jwt.io/",
+            "aud": "acc:qa57221676",
+            "exp": 1992025992,
+            "iat": 1682030954,
+            "acr": "loa1"
+            });
 
-          "iss": "https://lpbrandweb.000webhostapp.com/special.html",
-
-          "acr":"loa1",
-
-          "sub": "1234567890"
-
-        });
-
- 
-
-        */
+        }
 
  
 
-        // var obj2 = {
+        var id_token =
+            "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJQcmFzaGFudCBQYXJlZWsgLSA4NTk3MTAiLCJpc3MiOiJodHRwczovL2p3dC5pby8iLCJhdWQiOiJhY2M6cWE1NzIyMTY3NiIsImV4cCI6MTk5MjAyNTk5MiwiaWF0IjoxNjgyMDMwOTU0LCJhY3IiOiJsb2ExIn0.pwPoHVn0hg03Skwh3F_yBO45nshaDSKeiYDpyH-3Qkul2YENWvnYypHZu3A7_3JhqLDoqoOG48-TJiGypx99BYj02nROfL2MXKQON2_iSV9uajxhA8QpKCNuSJaC7eYLw2ldQCzj-wi71UTxRwqrFHkN5UaXmLCBny6aecgsqvu7aVbMMbXn5-y74HDK1iNyrsTpTNV20ncfLLhgIRZHeqzfU9-mz4Z5z8Gub_8JiDAZBNoiQBHkQcktWS-gSlufnHuphdEyPecDZ7JGgvAfwvZPO6lwDLrtGcx_4qnNtwCD9UT2a3TKfkjSVGRuShFZ05T910YsU-7iQTymlQkEUA";
 
-        //   sub: "+972-3-5555-555",
+        function lpGetAuthenticationToken(callback) {
+            console.log("LP asked for id_token or auth code in Code Flow");
+            callback(id_token);
+            callback("", "error reason");
+          }
 
-        //   iss: "https://jwt.io",
-
-        //   aud: "acc:qa57221676",
-
-        //   exp: 2034971930,
-
-        //   iat: 1471899942,
-
-        //   given_name: "Eitan",
-
-        //   acr: "loa1",
-
-        // };
-        callback({
-          sub: "+972-3-5555-555",
-          iss: "https://jwt.io",
-          aud: "acc:qa57221676",
-          exp: 2034971930,
-          iat: 1471899942,
-          given_name: "Eitan",
-          acr: "loa1",
-        });
-
-      }
-
- 
-
-      // var public_key = MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAu1SU1LfVLPHCozMxH2Mo4lgOEePzNm0tRgeLezV6ffAt0gunVTLw7onLRnrq0/IzW7yWR7QkrmBL7jTKEn5u+qKhbwKfBstIs+bMY2Zkp18gnTxKLxoS2tFczGkPLPgizskuemMghRniWaoLcyehkd3qqGElvW/VDL5AaWTg0nLVkjRo9z+40RQzuVaE8AkAFmxZzow3x+VJYKdjykkJ0iT9wCS0DRTXu269V264Vf/3jvredZiKRkgwlL9xNAwxXFg0x/XFw005UWVRIkdgcKWTjpBP2dPwVZ4WWC+9aGVd+Gyn1o0CLelf4rEjGoXbAAEgAqeGUxrcIlbjXfbcmwIDAQAB
-
-      var id_token = "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIrOTcyLTMtNTU1NS01NTUiLCJpc3MiOiJodHRwczovL2p3dC5pbyIsImF1ZCI6ImFjYzpxYTU3MjIxNjc2IiwiZXhwIjoyMDM0OTcxOTMwLCJpYXQiOjE0NzE4OTk5NDIsImdpdmVuX25hbWUiOiJFaXRhbiIsImFjciI6ImxvYTEifQ.n9hYTeaeS03lccbdNnXMOpgZisHfJm9qrjZZhwX0vkC-eOafPnn4rqqqXL9aYJv_rvdSVKK_TFufITX_W9aDpyls9BFlvZTKjTjADohP1KGl-f8tDDrLQrrLrfN4ESPudOhR0_BS58AxiuaXePzAdPLsUmQx40IMNwkUjjEEM2dML7nQM5v0DRypaDuNpS3-6W_OBLghEnzr2wwmWjpOC1S3tT_U70lPLoCp9i5dYbs8VO9HRvzQ0I1Mbh58qVGGVNcolljXc0xicwlxN_65xad3iOP6DeQJyNH5-NYSnIISjTNjZoG2Dfzzwr5QXr_3h9ABgmYGfss4lRA4_5aBGw";
-       function lpGetAuthenticationToken(callback) {
-        console.log("LP asked for id_token or auth code in Code Flow");
-        callback(id_token);
-        callback("", "error reason");
-      }
     </script>
 
   </body>
