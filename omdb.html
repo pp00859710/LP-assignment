@@ -1,166 +1,465 @@
 <!DOCTYPE html>
+
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Movie Info</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.9.3/css/bulma.min.css">
-    <style>
-        /* Your additional CSS code here */
-        body {
-            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-            background-color: #e8f904;
-            margin: 0;
+
+<meta charset="UTF-8" />
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+<title>API Data Fetching and Search Example</title>
+
+<style>
+
+      body {
+
+        font-family: Arial, sans-serif;
+
+        margin: 0;
+
+        padding: 20px;
+
+        background-color: #000; /* Black background */
+
+        color: #fff; /* White text */
+
+      }
+
+ 
+
+ 
+
+ 
+
+      h1 {
+
+        text-align: center;
+
+        margin-bottom: 20px;
+
+      }
+
+ 
+
+ 
+
+ 
+
+      label {
+
+        font-weight: bold;
+
+      }
+
+ 
+
+ 
+
+ 
+
+      input[type="text"] {
+
+        width: 80%;
+
+        padding: 8px;
+
+        margin-right: 10px;
+
+        border: 1px solid #ccc;
+
+        border-radius: 4px;
+
+        background-color: #111; /* Dark gray input background */
+
+        color: #fff; /* White text color */
+
+      }
+
+ 
+
+ 
+
+ 
+
+      button {
+
+        padding: 8px 15px;
+
+        background-color: #007bff;
+
+        color: #fff;
+
+        border: none;
+
+        border-radius: 4px;
+
+        cursor: pointer;
+
+        background-color: #111; /* Dark gray button background */
+
+      }
+
+ 
+
+ 
+
+ 
+
+      button:hover {
+
+        background-color: #0056b3;
+
+      }
+
+ 
+
+ 
+
+ 
+
+      #data-container {
+
+        margin-top: 20px;
+
+        border-top: 1px solid #ccc;
+
+        padding-top: 20px;
+
+      }
+
+ 
+
+ 
+
+ 
+
+      h2 {
+
+        color: #333;
+
+      }
+
+ 
+
+ 
+
+ 
+
+      p {
+
+        color: #666;
+
+        line-height: 1.5;
+
+      }
+
+ 
+
+ 
+
+ 
+
+      hr {
+
+        margin: 10px 0;
+
+        border: none;
+
+        border-top: 1px solid #ccc;
+
+      }
+
+      .card {
+
+        border: 1px solid #ccc;
+
+        border-radius: 4px;
+
+        padding: 10px;
+
+        margin-bottom: 20px;
+
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+
+        background-color: #111; /* Dark gray card background */
+
+      }
+
+ 
+
+ 
+
+ 
+
+      .card h2 {
+
+        margin-top: 0;
+
+      }
+
+      @media screen and (max-width: 768px) {
+
+        input[type="text"],
+
+        button {
+
+          width: 100%;
+
+          margin-right: 0;
+
+          margin-top: 10px;
+
         }
-        .container {
-            max-width: 500px;
-            margin: 20px auto;
-            padding: 20px;
-            background-color: #fff;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            border-radius: 8px;
-        }
-        h1 {
-            text-align: center;
-            color: #6a00ff;
-        }
-        input[type="search"] {
-            width: 70%;
-            padding: 10px;
-            border: 1px solid #ccc;
-            border-radius: 4px;
-        }
-        button[type="submit"] {
-            padding: 10px 20px;
-            background-color: #007bff48;
-            color: #fff;
-            border: none;
-            border-radius: 4px;
-            cursor: pointer;
-            transition: background-color 0.3s ease;
-        }
-        button[type="submit"]:hover {
-            background-color: #1bb610;
-        }
-        .button-container {
-            display: flex;
-            justify-content: center;
-            margin-top: 20px;
-        }
-        .movie-info {
-            margin-top: 30px;
-            text-align: center;
-        }
-        .div2, .div3, .div4 {
-            padding: 10px;
-            border-radius: 8px;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-            margin-bottom: 15px;
-        }
-        .div2 {
-            background: linear-gradient(135deg, #e95050, #ff8080);
-        }
-        .div3 {
-            background: linear-gradient(135deg, #8f6cfb, #a680ff);
-        }
-        .div4 {
-            background: linear-gradient(135deg, #46f846, #80ff80);
-        }
-        .movie-info h2 {
-            color: #ff8000;
-            margin-bottom: 10px;
-        }
-        .movie-info p {
-            margin: 0;
-            font-size: 18px;
-            color: #333;
-        }
-    </style>
+
+      }
+
+</style>
+
 </head>
+
 <body>
-    <div class="container">
-        <h1 class="title is-3 has-text-centered">Movie Details</h1>
-        <div class="field is-horizontal">
-            <div class="field-label is-normal">
-                <label class="label">Name of the Movie</label>
-            </div>
-            <div class="field-body">
-                <div class="field">
-                    <div class="control">
-                        <input class="input" type="text" id="movieTitle" placeholder="Please enter the movie name">
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="field is-grouped is-grouped-centered">
-            <div class="control">
-                <button class="button is-primary" onclick="getMovieInfo()">Get details</button>
-            </div>
-        </div>
-        <div id="movieInfo" class="movie-info-box">
-            <p class="movie-info-label">Director</p>
-            <p class="movie-info-value" id="director"></p>
-        </div>
-        <div class="movie-info-box">
-            <p class="movie-info-label">Rating</p>
-            <p class="movie-info-value" id="rating"></p>
-        </div>
-        <div class="movie-info-box">
-            <p class="movie-info-label">Release Year</p>
-            <p class="movie-info-value" id="year"></p>
-        </div>
-    </div>
-    <script>
-        function getMovieInfo() {
-            const apiKey = "adad0835"; // Your OMDB API key
-            const movieTitle = document.getElementById("movieTitle").value;
-            // Fetch data from OMDB API
-            fetch(`https://www.omdbapi.com/?t=${movieTitle}&apikey=${apiKey}`)
-                .then(response => response.json())
-                .then(data => {
-                    if (data.Response === "True") {
-                        document.getElementById("director").textContent = data.Director;
-                        document.getElementById("rating").textContent = data.imdbRating;
-                        document.getElementById("year").textContent = data.Year;
-                    } else {
-                        document.getElementById("director").textContent = "Could find the Movie!";
-                        document.getElementById("rating").textContent = "";
-                        document.getElementById("year").textContent = "";
-                    }
-                })
-                .catch(error => console.error(error));
-        }
-    </script>
 
-    <!-- LivePerson (LP) tag code -->
+<h1>Movie Information</h1>
+
+<div>
+
+<label for="searchInput">Search:</label>
+
+<input type="text" id="searchInput" />
+
+<button id="searchButton">Search</button>
+
+</div>
+
+<div id="data-container"></div>
+
+ 
+
+ 
+
+ 
+
+    <script src="https://lpcdn.lpsnmedia.net/webagent/client-SDK.min.js"></script>
+
+ 
+
+ 
+
+ 
 
     <script>
-        lpTag.agentSDK.init({
-            notificationCallback: notificationHandler,
-            visitorFocusedCallback: focusHandler,
-            visitorBlurredCallback: blurHandler
-        });
-        const notifyWhenDone = function (err) {
-            if (err) {
-                console.log("Error Occurred in notifyWhenDone: " + err);
+
+      const searchInput = document.getElementById("searchInput");
+
+      const searchButton = document.getElementById("searchButton");
+
+      const dataContainer = document.getElementById("data-container");
+
+ 
+
+ 
+
+ 
+
+      // Function to fetch data based on search term
+
+      function fetchData(searchTerm) {
+
+        fetch(
+
+          `https://www.omdbapi.com/?i=tt3896198&apikey=b3aa5ed7&t=${searchTerm}`
+
+        )
+
+          .then((response) => response.json())
+
+          .then((responseData) => {
+
+            dataContainer.innerHTML = ""; // Clear previous results
+
+            console.log(responseData);
+
+ 
+
+ 
+
+ 
+
+            if (responseData.length === 0) {
+
+              dataContainer.innerHTML = "<p>No results found.</p>";
+
+              return;
+
             }
-        };
-        const commandData = {
-            text: 'Title:' + movies.Title + 'Year:' + movies.Year + 'Director:' + movies.Director + 'imdbRating:' + movies.imdbRating
-        };
-        searchForm.addEventListener('submit', (e) => {
-            e.preventDefault();
-            mName = searchForm.term.value.trim();
-            renderMovie(mName);
-        });
-        window.addEventListener('DOMContentLoaded', () => {
-            // renderMovie();
 
-        });
-        
+ 
 
-    </script>
-    <script>https://lpcdn.lpsnmedia.net/webagent/client-SDK.min.js%22</script>
+ 
+
+ 
+
+            const post = responseData;
+
+            const postElement = document.createElement("div");
+
+            postElement.className = "card"; // Apply the 'card' class
+
+            postElement.innerHTML = `
+
+<h2>Title: ${post.Title}</h2>
+
+<p>Year: ${post.Year}</p>
+
+<p>Ratings: ${post.Ratings[0].Value}</p>
+
+<p>Type: ${post.Type}</p>
+
+                        `;
+
+            dataContainer.appendChild(postElement);
+
+ 
+
+ 
+
+ 
+
+            {
+
+              var notificationHandler = function (data) {
+
+                // Do something with the notifications
+
+              };
+
+ 
+
+ 
+
+ 
+
+              var focusHandler = function () {
+
+                // Do something when the visitor is focused
+
+                // Assume the visitor is focused to begin with
+
+              };
+
+ 
+
+ 
+
+ 
+
+              var blurHandler = function () {
+
+                // Do something when the visitor is blurred
+
+                // Assume the visitor is focused to begin with
+
+              };
+
+            }
+
+            lpTag.agentSDK.init({
+
+              notificationCallback: notificationHandler,
+
+              visitorFocusedCallback: focusHandler,
+
+              visitorBlurredCallback: blurHandler,
+
+            });
+
+            const notifyWhenDone = function (err) {
+
+              if (err) {
+
+                console.log("Error occurred in notifyWhenDone: " + err);
+
+              }
+
+            };
+
+            const commandData = {
+
+              text: "Title: " + post.Title + ", Year: " + post.Year,
+
+            };
+
+            lpTag.agentSDK.command(
+
+              lpTag.agentSDK.cmdNames.write,
+
+              commandData,
+
+              notifyWhenDone
+
+            );
+
+          })
+
+          .catch((error) => {
+
+            console.error("Error fetching data:", error);
+
+          });
+
+        searchInput.value = ""; // Clear the input after search
+
+      }
+
+ 
+
+ 
+
+ 
+
+      function performSearch() {
+
+        const searchTerm = searchInput.value.trim();
+
+        if (searchTerm !== "") {
+
+          fetchData(searchTerm);
+
+        }
+
+      }
+
+ 
+
+ 
+
+ 
+
+      searchButton.addEventListener("click", performSearch);
+
+ 
+
+ 
+
+ 
+
+      searchInput.addEventListener("keydown", (event) => {
+
+        if (event.key === "Enter") {
+
+          performSearch();
+
+          event.preventDefault(); // Prevent form submission
+
+        }
+
+      });
+
+</script>
+
 </body>
 
 </html>
+    
+
