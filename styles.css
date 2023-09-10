@@ -2,8 +2,9 @@ body {
     font-family: Arial, Helvetica, sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #f0f0f0;
+    background-color: #99c5fb;
   }
+
 
 nav {
     background-color: #0e139f86;
@@ -17,10 +18,9 @@ nav ul {
     margin: 0;
     padding: 0;
     display: flex;
-    fond-style: bold;
+    font-style: bold;
   }
 nav li {
-    display: inline;
     margin-right: 20px;
   }
 nav li:last-child {
@@ -31,27 +31,13 @@ nav a {
     text-decoration: none;
   }
 .cart-details{
-    background-color: #fff;
-    padding: 10px;
-    color: #333;
-    text-align: right;
-    position: fixed;
-    top: 0;
-    right: 0;
-    width: 300px;
     display: flex;
-    justify-content: space-between;
     flex-direction: column;
-    align-items: center;
-    border-bottom-left-radius: 5px;
-    border-top-right-radius: 5px;
-    box-shadow: 0 0 10px rgba(0,0,0,0.2);
+    align-items: flex-end;
     color: rgb(245, 4, 4);
 }
 .cart-details span {
-    margin-left: 10px;
-    font-size: 16px;
-    margin-right: 200px;
+margin-right: 200px;
   }
 
 
@@ -61,26 +47,18 @@ nav a {
     padding: 10px;
     margin: 10px;
     max-width: 200px;
-    background-color: #fff;
-    box-shadow: 0 0 5px rgba(0,0,0,0.1);
-    transition: transform 0.2s;
+    text-align: center; 
+    background-color: white; 
+    color: black; 
   }
 
-.items-container span{
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    padding: 20px;
-    background-color: #f0f0f0;
-}
+
 
 .fixed-description {
-    background-color: #928686;
+    background-color: #6cb7e9;
     padding: 10px;
     font-style: italic;
   }
-
-
 
 .add-to-cart-btn {
     display: block;
@@ -91,14 +69,7 @@ nav a {
     text-align: center;
     text-decoration: none;
     cursor: pointer;
-    border: none;
-    border-radius: 5px;
-    margin-top: 10px;
-    transition: background-color 0.2s;
   }
-.add-to-cart-btn:hover {
-    background-color: #451049;
-}
 #cart-count {
     color: black;
     padding: 5px;
@@ -115,3 +86,4 @@ nav a {
     font-size: 18px;
     display: inline;
   }
+
