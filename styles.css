@@ -43,6 +43,7 @@ margin-right: 200px;
 
 
 .item {
+    display:inline-block;
     border: 1px solid #1a141480;
     padding: 10px;
     margin: 10px;
