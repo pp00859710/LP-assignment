@@ -60,9 +60,8 @@ function addToCart(itemId, itemPrice) {
     updateCartCount();
     updateTotalPrice();
     console.log(totalPrice);
-// var totalPriceString = `Total Price: ${totalPrice}`;
 
-// var pageTitleString = `Page Title: ${pageTitleElement}`;
+
 window.lpTag = window.lpTag || {};
 lpTag.sdes = lpTag.sdes || [];
 lpTag.sdes.push({
@@ -71,39 +70,6 @@ total: totalPrice,
 currency: "USD", //CURRENCY CODE
 numItems: cartCount, //NUMBER OF ITEMS IN CART
 
-          // products: [
-
-          // {
-
-          // product: {
-
-          // name: pageTitleElement, //PRODUCT NAME
-
-          //       category: "category", //PRODUCT CATEGORY NAME
-
-          //       sku: "sku", //PRODUCT SKU OR UNIQUE IDENTIFIER
-
-          //       price: 7.8, //SINGLE PRODUCT PRICE
-
-          // },
-
-          //     quantity: 1, //NUMBER OF PRODUCTS
-
-          // },
-
-          // ],
-
-        });
-
- 
-
-        // lpTag.section = [pageTitleElement];
-
-        //SET A LIST OF YOUR SITE SECTIONS
-
-        // "electronics",  //CAN BE A SECTION OR A SUB-SECTION
-
-        // "user agreement faqs"
   "products": [{
                 "product": {
                     "name": "Page Title: " + document.title, // Correctly access the page title
