@@ -71,7 +71,17 @@
           total: totalPrice,
           currency: "USD", //CURRENCY CODE
           numItems: cartCount, //NUMBER OF ITEMS IN CART
+
+                        "products": [{
+                "product": {
+                    "name": "Page Title: " + document.title, // Correctly access the page title
+                    "category": ""
+                },
+            }]
         });
+          
+
+          
 
       }
       function updateCartCount() {
