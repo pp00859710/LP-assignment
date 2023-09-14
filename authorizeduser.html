@@ -67,7 +67,7 @@
         window.lpTag = window.lpTag || {}
         lpTag.sdes = lpTag.sdes || [];
 // Get the page title and set a default if it's null or empty
-        var pageTitle = document.title.trim() || "Unknown Page";
+        var pageTitle = document.title.trim();
         lpTag.sdes.push({
           type: "cart", //MANDATORY
           total: totalPrice,
