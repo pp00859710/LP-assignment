@@ -66,15 +66,17 @@
         console.log(totalPrice);
         window.lpTag = window.lpTag || {}
         lpTag.sdes = lpTag.sdes || [];
+// Get the page title and set a default if it's null or empty
+        var pageTitle = document.title.trim() || "Unknown Page";
         lpTag.sdes.push({
           type: "cart", //MANDATORY
           total: totalPrice,
           currency: "USD", //CURRENCY CODE
           numItems: cartCount, //NUMBER OF ITEMS IN CART
-
-                        "products": [{
+            
+            "products": [{
                 "product": {
-                    "name": "Page Title: " + document.title, // Correctly access the page title
+                    "name": "Page Title: " + pageTitle, // Correctly access the page title
                     "category": ""
                 },
             }]
