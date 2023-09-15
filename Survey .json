@@ -1,0 +1,1006 @@
+{
+  "hash": "986298963",
+  "bot": {
+    "id": "2124984e-0248-4ad1-afc6-9d0d531ceab7",
+    "name": "Survey ",
+    "chatBotType": "SURVEY_BOT",
+    "status": "NEW",
+    "getStartedButtonPayload": "hi",
+    "creationTime": 1694156218328,
+    "modificationTime": 1694605693002,
+    "demo": false,
+    "skipNLP": false,
+    "language": "en-US",
+    "botAttributes": {
+      "ENABLE_AGENT_ANNOTATIONS": "false",
+      "ENABLE_DEBUG": "true",
+      "PCS_FALLBACK_LIMIT": "3",
+      "PCS_FALLBACK_LIMIT_MESSAGE": "I’m sorry. I don’t understand. The survey will now close.",
+      "PCS_TARGETING_CONTROL_AGENT_MESSAGES_COUNT": "4",
+      "PCS_TARGETING_CONTROL_BOT_MESSAGES_COUNT": "0",
+      "PCS_TARGETING_CONTROL_CONSUMER_MESSAGES_COUNT": "4",
+      "PCS_TARGETING_CONTROL_LIVE_AGENT_MESSAGES_COUNT": "0",
+      "SMALL_TALK_ENABLED": "false",
+      "URL_SHORTENING_ENABLED": "false"
+    },
+    "sessionLength": 0,
+    "passThroughMode": false,
+    "transcriptDisabled": false,
+    "version": "2",
+    "publicBot": false,
+    "transferGroupId": "ebcf5393-42f2-4335-b0c9-339e22b03b4a",
+    "channel": "MESSAGING",
+    "readOnly": false,
+    "smallTalkEnabled": false
+  },
+  "responder": [],
+  "requiredContext": [],
+  "conversationMessage": [
+    {
+      "id": "0bbbc1d8601ba848d37820bb4dcb5ea375197593",
+      "chatBotId": "2124984e-0248-4ad1-afc6-9d0d531ceab7",
+      "userInputRequired": false,
+      "name": "text_4",
+      "type": "BOT_MESSAGE",
+      "content": {
+        "contentType": "STATIC",
+        "results": {
+          "type": "TEXT",
+          "tile": {
+            "tileData": [
+              {
+                "text": "Thank you for chatting with us, have a great day",
+                "buttons": [],
+                "quickReplyList": []
+              }
+            ]
+          }
+        }
+      },
+      "group": "02aa4552-d3bd-402d-8617-215a5263c0ea",
+      "status": "ACTIVE",
+      "required": true,
+      "prevMessageId": "ac046ffe37b2844bd0a9a487d4818237828a187e",
+      "responseMatches": [
+        {
+          "conditions": [],
+          "contextConditions": [],
+          "action": {
+            "name": "INTERACTION",
+            "value": "close_conversation"
+          },
+          "contextDataVariables": []
+        }
+      ],
+      "interactionType": "TEXT"
+    },
+    {
+      "id": "83fb0355bef65de01f2b790f6306f67b6f5cc372",
+      "chatBotId": "2124984e-0248-4ad1-afc6-9d0d531ceab7",
+      "userInputRequired": false,
+      "name": "csat_1",
+      "type": "BOT_MESSAGE",
+      "content": {
+        "contentType": "STATIC",
+        "results": {
+          "type": "CSAT",
+          "tile": {
+            "tileData": [
+              {
+                "text": "How would you rate the chat you just had on a scale of 1 to 5?",
+                "buttons": [],
+                "quickReplyList": [],
+                "pcsWidget": {
+                  "multipleChoices": [
+                    "1 😡",
+                    "2 🙁",
+                    "3 😐",
+                    "4 🙂",
+                    "5 😄"
+                  ],
+                  "pcsMultipleChoices": [
+                    {
+                      "text": "1 😡",
+                      "value": 1,
+                      "reportingValue": "1"
+                    },
+                    {
+                      "text": "2 🙁",
+                      "value": 2,
+                      "reportingValue": "2"
+                    },
+                    {
+                      "text": "3 😐",
+                      "value": 3,
+                      "reportingValue": "3"
+                    },
+                    {
+                      "text": "4 🙂",
+                      "value": 4,
+                      "reportingValue": "4"
+                    },
+                    {
+                      "text": "5 😄",
+                      "value": 5,
+                      "reportingValue": "5"
+                    }
+                  ],
+                  "pcsQuickReplyValues": [
+                    {
+                      "text": "1 😡",
+                      "value": 1,
+                      "reportingValue": "1"
+                    },
+                    {
+                      "text": "2 🙁",
+                      "value": 2,
+                      "reportingValue": "2"
+                    },
+                    {
+                      "text": "3 😐",
+                      "value": 3,
+                      "reportingValue": "3"
+                    },
+                    {
+                      "text": "4 🙂",
+                      "value": 4,
+                      "reportingValue": "4"
+                    },
+                    {
+                      "text": "5 😄",
+                      "value": 5,
+                      "reportingValue": "5"
+                    }
+                  ],
+                  "displayChoice": "QUICK_REPLY",
+                  "textStyle": "ABC",
+                  "chatMessageQuickReplies": [
+                    {
+                      "type": "text",
+                      "title": "1 😡",
+                      "value": 1,
+                      "reportingValue": "1"
+                    },
+                    {
+                      "type": "text",
+                      "title": "2 🙁",
+                      "value": 2,
+                      "reportingValue": "2"
+                    },
+                    {
+                      "type": "text",
+                      "title": "3 😐",
+                      "value": 3,
+                      "reportingValue": "3"
+                    },
+                    {
+                      "type": "text",
+                      "title": "4 🙂",
+                      "value": 4,
+                      "reportingValue": "4"
+                    },
+                    {
+                      "type": "text",
+                      "title": "5 😄",
+                      "value": 5,
+                      "reportingValue": "5"
+                    }
+                  ],
+                  "choicesPerRow": 4,
+                  "nonPcsChatMessageQuickReplies": [
+                    {
+                      "type": "text",
+                      "title": "1 😡"
+                    },
+                    {
+                      "type": "text",
+                      "title": "2 🙁"
+                    },
+                    {
+                      "type": "text",
+                      "title": "3 😐"
+                    },
+                    {
+                      "type": "text",
+                      "title": "4 🙂"
+                    },
+                    {
+                      "type": "text",
+                      "title": "5 😄"
+                    }
+                  ]
+                }
+              }
+            ]
+          }
+        }
+      },
+      "group": "02aa4552-d3bd-402d-8617-215a5263c0ea",
+      "status": "ACTIVE",
+      "required": true,
+      "nextMessageId": "bd4554a777c3103f5a9d4c71d8be1b34fa88b633",
+      "prevMessageId": "a387905a056700ecbb15fc39aafcb1fc4e05b2b2",
+      "responseMatches": [
+        {
+          "name": "RULE_1",
+          "conditions": [
+            {
+              "matchType": "EVAL_OPTION",
+              "evaluateOptionMatch": {
+                "value": "1 😡"
+              }
+            }
+          ],
+          "contextConditions": [],
+          "contextMatchConditionType": "ANY",
+          "action": {
+            "name": "INTERACTION",
+            "value": "next"
+          },
+          "contextDataVariables": []
+        },
+        {
+          "name": "RULE_2",
+          "conditions": [
+            {
+              "matchType": "EVAL_OPTION",
+              "evaluateOptionMatch": {
+                "value": "2 🙁"
+              }
+            }
+          ],
+          "contextConditions": [],
+          "action": {
+            "name": "INTERACTION",
+            "value": "next"
+          },
+          "contextDataVariables": []
+        },
+        {
+          "name": "RULE_3",
+          "conditions": [
+            {
+              "matchType": "EVAL_OPTION",
+              "evaluateOptionMatch": {
+                "value": "3 😐"
+              }
+            }
+          ],
+          "contextConditions": [],
+          "action": {
+            "name": "INTERACTION",
+            "value": "next"
+          },
+          "contextDataVariables": []
+        },
+        {
+          "name": "RULE_4",
+          "conditions": [
+            {
+              "matchType": "EVAL_OPTION",
+              "evaluateOptionMatch": {
+                "value": "4 🙂"
+              }
+            }
+          ],
+          "contextConditions": [],
+          "action": {
+            "name": "INTERACTION",
+            "value": "next"
+          },
+          "contextDataVariables": []
+        },
+        {
+          "name": "RULE_5",
+          "conditions": [
+            {
+              "matchType": "EVAL_OPTION",
+              "evaluateOptionMatch": {
+                "value": "5 😄"
+              }
+            }
+          ],
+          "contextConditions": [],
+          "action": {
+            "name": "INTERACTION",
+            "value": "next"
+          },
+          "contextDataVariables": []
+        }
+      ],
+      "interactionType": "CSAT",
+      "changeResponse": {
+        "enabled": true
+      },
+      "cancelResponse": {
+        "enabled": true
+      },
+      "fallbackResponseMessage": "That’s not what I was expecting, please select from one of these options"
+    },
+    {
+      "id": "a387905a056700ecbb15fc39aafcb1fc4e05b2b2",
+      "chatBotId": "2124984e-0248-4ad1-afc6-9d0d531ceab7",
+      "userInputRequired": false,
+      "name": "fcr_3",
+      "type": "BOT_MESSAGE",
+      "content": {
+        "contentType": "STATIC",
+        "results": {
+          "type": "FCR",
+          "tile": {
+            "tileData": [
+              {
+                "text": "Were you able to resolve your inquiry today?",
+                "buttons": [],
+                "quickReplyList": [],
+                "pcsWidget": {
+                  "multipleChoices": [
+                    "Yes",
+                    "No"
+                  ],
+                  "pcsMultipleChoices": [
+                    {
+                      "text": "Yes",
+                      "value": 1,
+                      "reportingValue": "1"
+                    },
+                    {
+                      "text": "No",
+                      "value": 0,
+                      "reportingValue": "0"
+                    }
+                  ],
+                  "pcsQuickReplyValues": [
+                    {
+                      "text": "Yes",
+                      "value": 1,
+                      "reportingValue": "1"
+                    },
+                    {
+                      "text": "No",
+                      "value": 0,
+                      "reportingValue": "0"
+                    }
+                  ],
+                  "displayChoice": "QUICK_REPLY",
+                  "textStyle": "ABC",
+                  "chatMessageQuickReplies": [
+                    {
+                      "type": "text",
+                      "title": "Yes",
+                      "value": 1,
+                      "reportingValue": "1"
+                    },
+                    {
+                      "type": "text",
+                      "title": "No",
+                      "value": 0,
+                      "reportingValue": "0"
+                    }
+                  ],
+                  "choicesPerRow": 4,
+                  "nonPcsChatMessageQuickReplies": [
+                    {
+                      "type": "text",
+                      "title": "Yes"
+                    },
+                    {
+                      "type": "text",
+                      "title": "No"
+                    }
+                  ]
+                }
+              }
+            ]
+          }
+        }
+      },
+      "group": "02aa4552-d3bd-402d-8617-215a5263c0ea",
+      "status": "ACTIVE",
+      "required": true,
+      "nextMessageId": "83fb0355bef65de01f2b790f6306f67b6f5cc372",
+      "responseMatches": [
+        {
+          "name": "RULE_YES",
+          "conditions": [
+            {
+              "matchType": "EVAL_OPTION",
+              "evaluateOptionMatch": {
+                "value": "Yes"
+              }
+            }
+          ],
+          "contextConditions": [],
+          "action": {
+            "name": "INTERACTION",
+            "value": "next"
+          },
+          "contextDataVariables": []
+        },
+        {
+          "name": "RULE_NO",
+          "conditions": [
+            {
+              "matchType": "EVAL_OPTION",
+              "evaluateOptionMatch": {
+                "value": "No"
+              }
+            }
+          ],
+          "contextConditions": [],
+          "action": {
+            "name": "INTERACTION",
+            "value": "next"
+          },
+          "contextDataVariables": []
+        }
+      ],
+      "interactionType": "FCR",
+      "changeResponse": {
+        "enabled": true
+      },
+      "cancelResponse": {
+        "enabled": true
+      }
+    },
+    {
+      "id": "ac046ffe37b2844bd0a9a487d4818237828a187e",
+      "chatBotId": "2124984e-0248-4ad1-afc6-9d0d531ceab7",
+      "userInputRequired": false,
+      "name": "open_ended_5",
+      "type": "BOT_MESSAGE",
+      "content": {
+        "contentType": "STATIC",
+        "results": {
+          "type": "OPEN_ENDED",
+          "tile": {
+            "tileData": [
+              {
+                "text": "How would you like us to imporove our services?",
+                "buttons": [],
+                "quickReplyList": [],
+                "pcsWidget": {
+                  "multipleChoices": [],
+                  "pcsMultipleChoices": [],
+                  "pcsQuickReplyValues": [],
+                  "displayChoice": "TEXT_ONLY",
+                  "textStyle": "NO_LIST",
+                  "chatMessageQuickReplies": [],
+                  "choicesPerRow": 0,
+                  "questionIdSynchronised": true,
+                  "interactionSynchronisedWithAC": true,
+                  "nonPcsChatMessageQuickReplies": []
+                }
+              }
+            ]
+          }
+        }
+      },
+      "group": "02aa4552-d3bd-402d-8617-215a5263c0ea",
+      "status": "ACTIVE",
+      "required": true,
+      "nextMessageId": "0bbbc1d8601ba848d37820bb4dcb5ea375197593",
+      "prevMessageId": "bd4554a777c3103f5a9d4c71d8be1b34fa88b633",
+      "responseMatches": [
+        {
+          "name": "RULE_OPEN",
+          "conditions": [
+            {
+              "matchType": "REGEX",
+              "regexMatch": {
+                "regexText": ".*",
+                "excludeKeywords": []
+              }
+            }
+          ],
+          "contextConditions": [],
+          "action": {
+            "name": "INTERACTION",
+            "value": "next"
+          },
+          "contextDataVariables": []
+        }
+      ],
+      "interactionType": "OPEN_ENDED",
+      "changeResponse": {
+        "enabled": true
+      },
+      "cancelResponse": {
+        "enabled": true
+      }
+    },
+    {
+      "id": "bd4554a777c3103f5a9d4c71d8be1b34fa88b633",
+      "chatBotId": "2124984e-0248-4ad1-afc6-9d0d531ceab7",
+      "userInputRequired": false,
+      "name": "nps_4",
+      "type": "BOT_MESSAGE",
+      "content": {
+        "contentType": "STATIC",
+        "results": {
+          "type": "NPS",
+          "tile": {
+            "tileData": [
+              {
+                "text": "Based on your experience today, how likely are you to recommend us to a friend or colleague? (0 Not at all likely - 10 extremely likely)",
+                "buttons": [],
+                "quickReplyList": [],
+                "pcsWidget": {
+                  "multipleChoices": [
+                    "0",
+                    "1",
+                    "2",
+                    "3",
+                    "4",
+                    "5",
+                    "6",
+                    "7",
+                    "8",
+                    "9",
+                    "10"
+                  ],
+                  "pcsMultipleChoices": [
+                    {
+                      "text": "0",
+                      "value": 0,
+                      "reportingValue": "0"
+                    },
+                    {
+                      "text": "1",
+                      "value": 1,
+                      "reportingValue": "1"
+                    },
+                    {
+                      "text": "2",
+                      "value": 2,
+                      "reportingValue": "2"
+                    },
+                    {
+                      "text": "3",
+                      "value": 3,
+                      "reportingValue": "3"
+                    },
+                    {
+                      "text": "4",
+                      "value": 4,
+                      "reportingValue": "4"
+                    },
+                    {
+                      "text": "5",
+                      "value": 5,
+                      "reportingValue": "5"
+                    },
+                    {
+                      "text": "6",
+                      "value": 6,
+                      "reportingValue": "6"
+                    },
+                    {
+                      "text": "7",
+                      "value": 7,
+                      "reportingValue": "7"
+                    },
+                    {
+                      "text": "8",
+                      "value": 8,
+                      "reportingValue": "8"
+                    },
+                    {
+                      "text": "9",
+                      "value": 9,
+                      "reportingValue": "9"
+                    },
+                    {
+                      "text": "10",
+                      "value": 10,
+                      "reportingValue": "10"
+                    }
+                  ],
+                  "pcsQuickReplyValues": [
+                    {
+                      "text": "0",
+                      "value": 0,
+                      "reportingValue": "0"
+                    },
+                    {
+                      "text": "1",
+                      "value": 1,
+                      "reportingValue": "1"
+                    },
+                    {
+                      "text": "2",
+                      "value": 2,
+                      "reportingValue": "2"
+                    },
+                    {
+                      "text": "3",
+                      "value": 3,
+                      "reportingValue": "3"
+                    },
+                    {
+                      "text": "4",
+                      "value": 4,
+                      "reportingValue": "4"
+                    },
+                    {
+                      "text": "5",
+                      "value": 5,
+                      "reportingValue": "5"
+                    },
+                    {
+                      "text": "6",
+                      "value": 6,
+                      "reportingValue": "6"
+                    },
+                    {
+                      "text": "7",
+                      "value": 7,
+                      "reportingValue": "7"
+                    },
+                    {
+                      "text": "8",
+                      "value": 8,
+                      "reportingValue": "8"
+                    },
+                    {
+                      "text": "9",
+                      "value": 9,
+                      "reportingValue": "9"
+                    },
+                    {
+                      "text": "10",
+                      "value": 10,
+                      "reportingValue": "10"
+                    }
+                  ],
+                  "displayChoice": "QUICK_REPLY",
+                  "textStyle": "ABC",
+                  "chatMessageQuickReplies": [
+                    {
+                      "type": "text",
+                      "title": "0",
+                      "value": 0,
+                      "reportingValue": "0"
+                    },
+                    {
+                      "type": "text",
+                      "title": "1",
+                      "value": 1,
+                      "reportingValue": "1"
+                    },
+                    {
+                      "type": "text",
+                      "title": "2",
+                      "value": 2,
+                      "reportingValue": "2"
+                    },
+                    {
+                      "type": "text",
+                      "title": "3",
+                      "value": 3,
+                      "reportingValue": "3"
+                    },
+                    {
+                      "type": "text",
+                      "title": "4",
+                      "value": 4,
+                      "reportingValue": "4"
+                    },
+                    {
+                      "type": "text",
+                      "title": "5",
+                      "value": 5,
+                      "reportingValue": "5"
+                    },
+                    {
+                      "type": "text",
+                      "title": "6",
+                      "value": 6,
+                      "reportingValue": "6"
+                    },
+                    {
+                      "type": "text",
+                      "title": "7",
+                      "value": 7,
+                      "reportingValue": "7"
+                    },
+                    {
+                      "type": "text",
+                      "title": "8",
+                      "value": 8,
+                      "reportingValue": "8"
+                    },
+                    {
+                      "type": "text",
+                      "title": "9",
+                      "value": 9,
+                      "reportingValue": "9"
+                    },
+                    {
+                      "type": "text",
+                      "title": "10",
+                      "value": 10,
+                      "reportingValue": "10"
+                    }
+                  ],
+                  "choicesPerRow": 4,
+                  "nonPcsChatMessageQuickReplies": [
+                    {
+                      "type": "text",
+                      "title": "0"
+                    },
+                    {
+                      "type": "text",
+                      "title": "1"
+                    },
+                    {
+                      "type": "text",
+                      "title": "2"
+                    },
+                    {
+                      "type": "text",
+                      "title": "3"
+                    },
+                    {
+                      "type": "text",
+                      "title": "4"
+                    },
+                    {
+                      "type": "text",
+                      "title": "5"
+                    },
+                    {
+                      "type": "text",
+                      "title": "6"
+                    },
+                    {
+                      "type": "text",
+                      "title": "7"
+                    },
+                    {
+                      "type": "text",
+                      "title": "8"
+                    },
+                    {
+                      "type": "text",
+                      "title": "9"
+                    },
+                    {
+                      "type": "text",
+                      "title": "10"
+                    }
+                  ]
+                }
+              }
+            ]
+          }
+        }
+      },
+      "group": "02aa4552-d3bd-402d-8617-215a5263c0ea",
+      "status": "ACTIVE",
+      "required": true,
+      "nextMessageId": "ac046ffe37b2844bd0a9a487d4818237828a187e",
+      "prevMessageId": "83fb0355bef65de01f2b790f6306f67b6f5cc372",
+      "responseMatches": [
+        {
+          "name": "RULE_0",
+          "conditions": [
+            {
+              "matchType": "EVAL_OPTION",
+              "evaluateOptionMatch": {
+                "value": "0"
+              }
+            }
+          ],
+          "contextConditions": [],
+          "action": {
+            "name": "INTERACTION",
+            "value": "next"
+          },
+          "contextDataVariables": []
+        },
+        {
+          "name": "RULE_1",
+          "conditions": [
+            {
+              "matchType": "EVAL_OPTION",
+              "evaluateOptionMatch": {
+                "value": "1"
+              }
+            }
+          ],
+          "contextConditions": [],
+          "action": {
+            "name": "INTERACTION",
+            "value": "next"
+          },
+          "contextDataVariables": []
+        },
+        {
+          "name": "RULE_2",
+          "conditions": [
+            {
+              "matchType": "EVAL_OPTION",
+              "evaluateOptionMatch": {
+                "value": "2"
+              }
+            }
+          ],
+          "contextConditions": [],
+          "action": {
+            "name": "INTERACTION",
+            "value": "next"
+          },
+          "contextDataVariables": []
+        },
+        {
+          "name": "RULE_3",
+          "conditions": [
+            {
+              "matchType": "EVAL_OPTION",
+              "evaluateOptionMatch": {
+                "value": "3"
+              }
+            }
+          ],
+          "contextConditions": [],
+          "action": {
+            "name": "INTERACTION",
+            "value": "next"
+          },
+          "contextDataVariables": []
+        },
+        {
+          "name": "RULE_4",
+          "conditions": [
+            {
+              "matchType": "EVAL_OPTION",
+              "evaluateOptionMatch": {
+                "value": "4"
+              }
+            }
+          ],
+          "contextConditions": [],
+          "action": {
+            "name": "INTERACTION",
+            "value": "next"
+          },
+          "contextDataVariables": []
+        },
+        {
+          "name": "RULE_5",
+          "conditions": [
+            {
+              "matchType": "EVAL_OPTION",
+              "evaluateOptionMatch": {
+                "value": "5"
+              }
+            }
+          ],
+          "contextConditions": [],
+          "action": {
+            "name": "INTERACTION",
+            "value": "next"
+          },
+          "contextDataVariables": []
+        },
+        {
+          "name": "RULE_6",
+          "conditions": [
+            {
+              "matchType": "EVAL_OPTION",
+              "evaluateOptionMatch": {
+                "value": "6"
+              }
+            }
+          ],
+          "contextConditions": [],
+          "action": {
+            "name": "INTERACTION",
+            "value": "next"
+          },
+          "contextDataVariables": []
+        },
+        {
+          "name": "RULE_7",
+          "conditions": [
+            {
+              "matchType": "EVAL_OPTION",
+              "evaluateOptionMatch": {
+                "value": "7"
+              }
+            }
+          ],
+          "contextConditions": [],
+          "action": {
+            "name": "INTERACTION",
+            "value": "next"
+          },
+          "contextDataVariables": []
+        },
+        {
+          "name": "RULE_8",
+          "conditions": [
+            {
+              "matchType": "EVAL_OPTION",
+              "evaluateOptionMatch": {
+                "value": "8"
+              }
+            }
+          ],
+          "contextConditions": [],
+          "action": {
+            "name": "INTERACTION",
+            "value": "next"
+          },
+          "contextDataVariables": []
+        },
+        {
+          "name": "RULE_9",
+          "conditions": [
+            {
+              "matchType": "EVAL_OPTION",
+              "evaluateOptionMatch": {
+                "value": "9"
+              }
+            }
+          ],
+          "contextConditions": [],
+          "action": {
+            "name": "INTERACTION",
+            "value": "next"
+          },
+          "contextDataVariables": []
+        },
+        {
+          "name": "RULE_10",
+          "conditions": [
+            {
+              "matchType": "EVAL_OPTION",
+              "evaluateOptionMatch": {
+                "value": "10"
+              }
+            }
+          ],
+          "contextConditions": [],
+          "action": {
+            "name": "INTERACTION",
+            "value": "next"
+          },
+          "contextDataVariables": []
+        }
+      ],
+      "interactionType": "NPS",
+      "changeResponse": {
+        "enabled": true
+      },
+      "cancelResponse": {
+        "enabled": true
+      }
+    }
+  ],
+  "menus": [],
+  "groups": [
+    {
+      "chatBotId": "2124984e-0248-4ad1-afc6-9d0d531ceab7",
+      "id": "02aa4552-d3bd-402d-8617-215a5263c0ea",
+      "name": "survey",
+      "creationTime": "2023-09-08 02:56:58",
+      "modificationTime": "2023-09-08 02:56:58",
+      "dialogType": "SURVEY_DIALOG",
+      "status": "ENABLED",
+      "disambiguteOnlySelectedDomains": false
+    }
+  ],
+  "platforms": [
+    {
+      "id": "c8060596430542cb2c4ee8f64fd996e0c8d6c094",
+      "chatbotId": "2124984e-0248-4ad1-afc6-9d0d531ceab7",
+      "integrationType": "HTMLCLIENT",
+      "platform": "HTMLCLIENT",
+      "status": "NEW"
+    }
+  ],
+  "associatedDomains": [],
+  "dialogTemplates": []
+}
